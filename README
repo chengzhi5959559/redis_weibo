@@ -1,0 +1,23 @@
+登录注册key设计规则
+user:userid:5:username 张三
+user:userid:5:password 123123
+
+冗余字段
+user:username:zhangsan:userid 5
+生成userid
+incr
+global:userid 5
+
+
+发微博
+
+post:postid:3:time timestamp
+post:postid:3:userid 5
+post:postid:3:content 'this is my hometown!'
+
+incr global:postid 
+
+自己的粉丝和关注的人
+用set来实现，每人一个集合
+following  关注的人
+follower    粉丝
